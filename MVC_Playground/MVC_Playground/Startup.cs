@@ -36,6 +36,11 @@ namespace MVC_Playground
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
+            // Add Google Maps API
+            services.AddSingleton<IApplicationConfiguration, ApplicationConfiguration>(
+        e => Configuration.GetSection("ApplicationConfiguration")
+                .Get<ApplicationConfiguration>());
+
             services.AddMvc();
         }
 

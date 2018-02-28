@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inject MVC_Playground.Services.IApplicationConfiguration AppSettings;
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -67,7 +68,7 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZiL2dcSGmfvIWnfBn1vqFzSnTnN7ox9w&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=@AppSettings.GoogleApiKey&callback=initMap">
     </script>
 
     @RenderSection("Scripts", required: false)
